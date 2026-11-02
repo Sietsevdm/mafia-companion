@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {migrateProfile} from '../web/profile.mjs';
+import {migrateProfile,profileMarkup} from '../web/profile.mjs';
 import {rankAt,multipliers,crimeQuote,runnerProjection,businessQuote,policyMultiplier,tradeQuote} from '../web/calculations.mjs';
 const data=JSON.parse(await readFile(new URL('../web/data.json',import.meta.url),'utf8'));
 const base={xp:0,supporter:1,sunday:false,married:false,respect:0,art:0,reward:0,cooldown:0,weapon:1,owns:[],server:1};
@@ -26,3 +26,6 @@ test('Copied crime income is combined and is not multiplied twice',()=>{const p=
 test('Existing bonus settings migrate to equivalent game counts',()=>{const p=migrateProfile({...base},{respect:5,art:2});assert.equal(p.respectPoints,150);assert.equal(p.certifiedOriginals,6);assert.equal(multipliers(data.ranks,p).respect,5);assert.equal(multipliers(data.ranks,p).art,2);});
 test('Existing count settings are not overwritten by migration',()=>{const p={...base,respectPoints:151,certifiedOriginals:7};migrateProfile(p,p);assert.equal(p.respectPoints,151);assert.equal(p.certifiedOriginals,7);});
 test('Tier zero correctly locks crimes requiring a personal weapon',()=>{assert.equal(quote('crime',{...base,weapon:0}).available,false);});
+test('Referral-only membership affects common rewards but not the paid passive helper',()=>{const m=multipliers(data.ranks,{...base,supporter:1.25,referralMembership:true});assert.equal(m.common,1.25);assert.equal(m.business,1);assert.equal(m.employee,1.25);});
+test('Referral membership, Sunday and marriage use separate passive factors',()=>{const m=multipliers(data.ranks,{...base,supporter:1.25,referralMembership:true,sunday:true,married:true});assert.ok(Math.abs(m.business-1.65)<1e-9);assert.ok(Math.abs(m.employee-3.09375)<1e-9);});
+test('Profile copy instructions point to the actual Mafia readouts',()=>{const html=profileMarkup({field:(label,g,k,o)=>label+' '+(o?.hint||''),select:()=>'',toggle:()=>'',profile:{owns:[]},rank:{name:'Outsider'},multipliers:{respect:0,art:0}});assert.ok(html.includes('Dashboard → Your standing'));assert.ok(html.includes('Personal armory → WEAPON TIER'));assert.ok(html.includes('My empire → My possessions'));assert.ok(!html.includes('In Mafia → My possessions, copy'));});

@@ -4,7 +4,7 @@ A self-hosted guide and planning app for Mafia: The New Era. Eight interactive p
 
 ## Recommended: deploy like Apex League
 
-Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.0.4` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
+Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.0.5` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
 
 See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the complete setup, GHCR access, DNS, SSL and update instructions. GitHub Actions verifies the app and Nginx container before publishing AMD64/ARM64 images and a versioned release.
 
@@ -121,13 +121,13 @@ The tests cover rank boundaries, crime expected values, car-theft rewards, unloc
 
 For the static-mount deployment, replace the files under `/opt/mafia-companion/web`, then refresh the browser. If changing `nginx.conf`, restart the container. No database migration is needed. Files are served with revalidation to avoid stale balance data.
 
-For the image deployment, rebuild using a new tag such as `mafia-companion:1.0.4`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
+For the image deployment, rebuild using a new tag such as `mafia-companion:1.0.5`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
 
 ## Balance snapshot and assumptions
 
 Source: https://github.com/EraaZoraah/Mafia-The-new-Era
 
-Pinned revision: `66c729cf392b2660067a0a3919644ec63e1648e3`, checked 2 November 2026.
+Pinned revision: `0d6677ff6ebc6aec7aca2630f164a2805f6b6307`, checked 2 November 2026.
 
 - `web/data.json` holds the crime, business, rank, team and daily data used by calculators. Assets included are the relevant base catalog snapshot; the app does not provide an ownership simulator for every collector vehicle.
 - `web/calculations.mjs` contains pure calculation functions.
@@ -138,7 +138,7 @@ Pinned revision: `66c729cf392b2660067a0a3919644ec63e1648e3`, checked 2 November 
 - Liquidation comparisons use minimum rounds, not extra-ammunition chance boosts.
 - Team estimates assume the selected player's rank/bonuses, full eligible crew and sufficient resources. They do not model recruitment time.
 - Runner forecasts use constant bonuses and manually repeated hourly hiring. They do not simulate calendar transitions, custody, expiry, cash caps or collection outages.
-- Employee accrual applies paid-Supporter/Sunday in both the common helper and passive helper in this source snapshot. Referral-only membership is not equivalent; the profile selector explicitly models paid membership.
+- Employee accrual applies the paid/granted membership and Sunday factors through two helpers. For referral-only membership, select the tier and tick the referral-origin checkbox. Mixed-source memberships are not fully modeled; see CONTENT-AUDIT.md.
 - Business risk policies use long-run renewal averages: multiplier × (1 − risk × seizure) / (1 + risk × closure hours). Actual short-run results vary.
 - Investment calculations show base quoted interest, without custody reduction or account bonuses. No renewal is automatic.
 - XP planner freezes rank/chance and ignores promotion refills; its regeneration time is an energy-only scenario, not a forecast of real completion time.
