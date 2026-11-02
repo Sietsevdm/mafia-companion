@@ -1,7 +1,7 @@
 # Ready-built image, published by GitHub Actions. No VPS files or builds needed.
 services:
   mafia-companion:
-    image: ${LEDGER_IMAGE:-ghcr.io/sietsevdm/mafia-companion:1.0.5}
+    image: ${LEDGER_IMAGE:-ghcr.io/sietsevdm/mafia-companion:1.0.6}
     container_name: mafia-companion
     restart: unless-stopped
     networks:

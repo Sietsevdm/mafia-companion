@@ -28,7 +28,7 @@ function normalize() {
 }
 function save(){try{localStorage.setItem('ledger-v1',JSON.stringify(state));}catch{storageAvailable=false;}}
 normalize();
-const nav = [{id:'profile',icon:'♜',label:'Player profile'},{id:'help',icon:'?',label:'Tutorial & help'},{id:'overview',icon:'◈',label:'Overview'},{id:'guide',icon:'▤',label:'Strategy guide'},{id:'crimes',icon:'♠',label:'Crime explorer'},{id:'income',icon:'↗',label:'Income lab'},{id:'xp',icon:'♜',label:'XP planner'},{id:'teams',icon:'♟',label:'Team missions'},{id:'daily',icon:'☷',label:'Daily checklist'},{id:'trade',icon:'⇄',label:'Trade & investments'}];
+const nav = [{id:'overview',icon:'◈',label:'Overview'},{id:'profile',icon:'♜',label:'Player profile'},{id:'daily',icon:'☷',label:'Daily checklist'},{id:'income',icon:'↗',label:'Income lab'},{id:'trade',icon:'⇄',label:'Trade & investments'},{id:'crimes',icon:'♠',label:'Crime explorer'},{id:'xp',icon:'♜',label:'XP planner'},{id:'teams',icon:'♟',label:'Team missions'},{id:'guide',icon:'▤',label:'Strategy guide'},{id:'help',icon:'?',label:'Tutorial & help'}];
 let page = nav.some(x=>x.id===location.hash.slice(1))?location.hash.slice(1):'overview';
 const views = {profile:playerProfilePage,help:helpPage,overview,guide,crimes,income,xp:xpPlanner,teams,daily,trade};
 const escape = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
