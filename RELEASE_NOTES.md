@@ -1,7 +1,7 @@
-# Version 1.0.6
+# Version 1.0.7
 
-Reordered the sidebar around the player workflow: Overview, Player profile, Daily checklist, Income lab, Trade & investments, Crime explorer, XP planner, Team missions, Strategy guide, Tutorial & help.
+Removed all GitHub source links and source attribution rows from the app, including strategy chapters and calculators. Updated the help instructions to match.
 
-Existing page links, saved settings and calculators continue to work.
+Player settings and calculator behavior are preserved.
 
-In Portainer, use ghcr.io/sietsevdm/mafia-companion:1.0.6 and update the stack with Re-pull image enabled.
+In Portainer, use ghcr.io/sietsevdm/mafia-companion:1.0.7 and update the stack with Re-pull image enabled.

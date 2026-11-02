@@ -6,7 +6,7 @@ The Ledger has its own stack and published image. It shares only Nginx Proxy Man
 
 In Portainer, select the same Docker environment as Nginx Proxy Manager. Open **Stacks → Add stack**, name it **mafia-companion**, and select **Web editor**.
 
-Paste the contents of `portainer-stack.yaml` from this repository. It uses the ready-built image `ghcr.io/sietsevdm/mafia-companion:1.0.6`.
+Paste the contents of `portainer-stack.yaml` from this repository. It uses the ready-built image `ghcr.io/sietsevdm/mafia-companion:1.0.7`.
 
 The F1 stack uses an external network named `proxy`; this stack defaults to the same network. If your NPM network has a different name, add the environment variable `PROXY_NETWORK` with its exact name.
 
