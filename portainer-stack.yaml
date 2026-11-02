@@ -1,8 +1,8 @@
-# Build the image on your VPS first, using the README instructions.
+# Ready-built image, published by GitHub Actions. No VPS files or builds needed.
 services:
   mafia-companion:
-    image: mafia-companion:1.0.0
-    pull_policy: never
+    image: ${LEDGER_IMAGE:-ghcr.io/sietsevdm/mafia-companion:1.0.1}
+    container_name: mafia-companion
     restart: unless-stopped
     networks:
       - proxy
@@ -10,4 +10,4 @@ services:
 networks:
   proxy:
     external: true
-    name: ${PROXY_NETWORK}
+    name: ${PROXY_NETWORK:-proxy}

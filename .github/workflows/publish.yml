@@ -1,0 +1,89 @@
+name: Test and publish The Ledger
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  packages: write
+concurrency:
+  group: ledger-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Verify calculations and JavaScript
+        run: |
+          npm test
+          node --check web/app.mjs
+          node --check web/calculations.mjs
+          node --check web/guide.mjs
+          node --check web/theme.js
+      - name: Verify Nginx container
+        run: |
+          docker build -t ledger-smoke .
+          docker run --rm ledger-smoke nginx -t
+          docker run -d --name ledger-smoke -p 127.0.0.1:8088:80 ledger-smoke
+          trap 'docker logs ledger-smoke; docker rm -f ledger-smoke' EXIT
+          for attempt in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8088/health; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8088/health | grep -q ok
+          curl -fsS http://127.0.0.1:8088/ | grep -q 'The Ledger'
+          curl -fsSI http://127.0.0.1:8088/app.mjs | grep -qi 'content-type: application/javascript'
+          curl -fsS http://127.0.0.1:8088/data.json > /tmp/ledger-data.json
+          node -e "JSON.parse(require('node:fs').readFileSync('/tmp/ledger-data.json','utf8'))"
+      - name: Release details
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "image=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+          if gh release view "v$VERSION" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: docker/setup-qemu-action@v3
+        if: steps.release.outputs.exists != 'true'
+      - uses: docker/setup-buildx-action@v3
+        if: steps.release.outputs.exists != 'true'
+      - uses: docker/login-action@v3
+        if: steps.release.outputs.exists != 'true'
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and publish image
+        if: steps.release.outputs.exists != 'true'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ steps.release.outputs.image }}:${{ steps.release.outputs.version }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.version=${{ steps.release.outputs.version }}
+            org.opencontainers.image.title=The Ledger Mafia Companion
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Announce completed release
+        if: steps.release.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.release.outputs.version }}
+          IMAGE: ${{ steps.release.outputs.image }}
+        run: |
+          printf 'Ready-built image: `%s:%s`\n\n' "$IMAGE" "$VERSION" > /tmp/ledger-release.md
+          cat RELEASE_NOTES.md >> /tmp/ledger-release.md
+          gh release create "v$VERSION" --target "$GITHUB_SHA" --title "The Ledger $VERSION" --notes-file /tmp/ledger-release.md

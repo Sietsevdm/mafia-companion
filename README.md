@@ -2,6 +2,12 @@
 
 A self-hosted guide and planning app for Mafia: The New Era. Eight interactive pages, no database, no login and no connection to the game. Settings and daily checks stay in the visitor's browser. There are no external fonts, analytics or third-party runtime scripts.
 
+## Recommended: deploy like Apex League
+
+Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.0.1` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
+
+See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the complete setup, GHCR access, DNS, SSL and update instructions. GitHub Actions verifies the app and Nginx container before publishing AMD64/ARM64 images and a versioned release.
+
 ## What is included
 
 - Searchable strategy guide with expandable chapters and pinned source links.
@@ -14,7 +20,7 @@ A self-hosted guide and planning app for Mafia: The New Era. Eight interactive p
 - Daily checklist: saved locally and reset by UTC date, with countdown.
 - Freight/production expected-profit and fixed-term investment calculators.
 
-## Recommended deployment: Portainer + existing Nginx Proxy Manager
+## Alternative deployment: static files + Nginx Proxy Manager
 
 This route needs no custom image build. It uses the official Nginx image and mounts the included static files. For Docker Standalone stacks, not Swarm.
 
@@ -72,7 +78,7 @@ Under SSL, request a Let's Encrypt certificate and enable Force SSL. Use NPM's e
 
 Open `https://your-guide-hostname`, change a calculator, refresh, and confirm the setting remains. Do not use `localhost` as the NPM forward hostname: that refers to NPM's own container.
 
-## Alternative: build a portable image
+## Alternative: build an image locally
 
 Upload the folder, then run on the VPS:
 
@@ -81,7 +87,7 @@ cd /opt/mafia-companion
 docker build -t mafia-companion:1.0.0 .
 ```
 
-Create a Portainer stack using `portainer-stack.yaml` with the same `PROXY_NETWORK` environment variable. The image must exist on the same Docker endpoint used by Portainer. The stack deliberately does not pull a nonexistent public image.
+For a locally built image, use the network layout in `portainer-stack.yaml` and set `LEDGER_IMAGE=mafia-companion:1.0.0`. The local image must exist on the Docker endpoint used by Portainer. Omit registry re-pulling for a locally built image.
 
 If deploying to another host later, build there or push your image to your own registry and update the image name. This package does not publish an image or alter your game repository.
 
