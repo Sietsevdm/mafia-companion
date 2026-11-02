@@ -1,11 +1,11 @@
-# Version 1.0.1
+# Version 1.0.2
 
-The Ledger can now be deployed like Apex League: a versioned GHCR image, built for AMD64 and ARM64, with a separate Portainer stack on the existing proxy network.
+New players see a seven-step welcome walkthrough covering the profile, income, crimes, XP, team missions, daily rewards and saved settings. Players can dismiss it, replay it from the header Help button, or read every step in the permanent Tutorial & help page. Dismissal is remembered in the browser.
 
-Use `portainer-stack.yaml`. Default image: `ghcr.io/sietsevdm/mafia-companion:1.0.1`. Default network: `proxy`. Optional Portainer variables: `LEDGER_IMAGE` and `PROXY_NETWORK`.
+Each calculator now has a How to use this page section. Input hints explain what numbers to enter; clearer labels and a twelve-entry glossary explain expected rewards, net cash, payback, reinvestment, reserve and separate XP systems. Numeric fields associate their hints with the input for assistive technology.
 
-Nginx Proxy Manager target: `http://mafia-companion:80`. No host port, database, VPS clone, bind mount or local image build is required for this deployment.
+Update the separate Portainer stack image to `ghcr.io/sietsevdm/mafia-companion:1.0.2` and enable Re-pull image. Existing saved profiles, calculator settings, themes and checklists are preserved. The welcome guide appears once on each browser because this is its first release.
 
-Includes the complete guide, calculators, local player profile and daily checklist, dark mode and improved light-mode text readability.
+No game connection, login, balance or calculator-formula changes are included. The walkthrough explains that all actions and claims still happen in Mafia.
 
-GitHub Actions runs calculation tests, JavaScript checks and a real Nginx container smoke test before publishing. Existing static-mount and local-build files remain available as alternatives.
+All 14 calculation tests pass. Browser checks cover walkthrough progression, dismissal persistence, replay, profile shortcut, glossary, field hints and mobile dialog layout. GitHub Actions also checks JavaScript syntax and the real Nginx container before publishing AMD64/ARM64 images.

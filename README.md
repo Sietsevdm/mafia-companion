@@ -4,13 +4,14 @@ A self-hosted guide and planning app for Mafia: The New Era. Eight interactive p
 
 ## Recommended: deploy like Apex League
 
-Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.0.1` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
+Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.0.2` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
 
 See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the complete setup, GHCR access, DNS, SSL and update instructions. GitHub Actions verifies the app and Nginx container before publishing AMD64/ARM64 images and a versioned release.
 
 ## What is included
 
 - Searchable strategy guide with expandable chapters and pinned source links.
+- First-visit walkthrough, replayable Help button, permanent Tutorial & help page, glossary and page-specific calculator instructions.
 - Light/dark mode toggle in the header. Uses your system preference initially and remembers your choice in this browser. Larger supporting text and stronger light-mode contrast.
 - Player profile: normal XP, weapon tier, owned categories, bonuses and server cash setting.
 - Crime explorer: search, availability filter, sorting, expected XP per energy, ammunition and net cash.
@@ -120,7 +121,7 @@ The tests cover rank boundaries, crime expected values, car-theft rewards, unloc
 
 For the static-mount deployment, replace the files under `/opt/mafia-companion/web`, then refresh the browser. If changing `nginx.conf`, restart the container. No database migration is needed. Files are served with revalidation to avoid stale balance data.
 
-For the image deployment, rebuild using a new tag such as `mafia-companion:1.0.1`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
+For the image deployment, rebuild using a new tag such as `mafia-companion:1.0.2`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
 
 ## Balance snapshot and assumptions
 

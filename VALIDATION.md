@@ -1,5 +1,7 @@
 # Verification — 2 November 2026
 
+Tutorial update: verified automatic first visit, all seven steps, Back/Next/Finish, saved dismissal after reload, header replay, permanent help and 12 glossary entries, profile shortcut, per-page explanations and field hints. Escape dismisses the modal. At a 390px viewport, the dialog fits without horizontal overflow. Browser console had no errors during these checks.
+
 Theme update: verified light/dark switching, saved theme after reload, dark table colors and browser console. Light supporting copy and labels now use larger sizes and stronger contrast. The theme script runs before styles to avoid a light flash on dark-mode reloads.
 
 - `npm test`: 14 calculation tests passed.
