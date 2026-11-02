@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101614">
+  <meta name="description" content="An independent Mafia: The New Era strategy guide with income, crime, XP and trading calculators.">
+  <title>The Ledger · Mafia Companion</title>
+  <script src="theme.js"></script>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <aside class="sidebar" aria-label="Main navigation">
+    <a class="brand" href="#overview"><span class="monogram">L<span>◆</span></span><span>THE LEDGER<small>MAFIA COMPANION</small></span></a>
+    <div class="side-label">YOUR ADVANTAGE</div>
+    <nav id="navigation"></nav>
+    <div class="side-note"><span class="live-dot"></span> Independent strategy desk<p>Plan the next move.<br>Build the bigger empire.</p></div>
+    <a class="source-link" id="source-link" target="_blank" rel="noopener">SOURCE-VERIFIED ↗</a>
+    <small class="side-version">Balance snapshot · 02 Nov 2026</small>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><button id="menu" class="icon-button mobile-only" aria-label="Toggle navigation" aria-expanded="false">☰</button><span class="breadcrumb">STRATEGY DESK <span>/</span> <b id="page-title">Overview</b></span><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button><button id="profile-toggle" class="profile-button" aria-expanded="false"><span class="avatar">♜</span><span id="profile-label">Your player profile</span><span>⌄</span></button></header>
+    <section id="profile-panel" class="profile-panel" hidden aria-label="Player profile"></section>
+    <main id="main" tabindex="-1"><div class="loading">Opening the ledger…</div></main>
+    <footer>THE LEDGER <span>Independent companion · Estimates, not guaranteed returns · No game connection</span><button id="reset" class="text-button">Reset saved data</button></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

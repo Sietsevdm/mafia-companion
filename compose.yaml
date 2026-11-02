@@ -1,0 +1,7 @@
+services:
+  mafia-companion:
+    build: .
+    image: mafia-companion:1.0.0
+    restart: unless-stopped
+    ports:
+      - "8088:80"

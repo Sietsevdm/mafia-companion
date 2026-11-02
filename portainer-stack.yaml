@@ -1,0 +1,13 @@
+# Build the image on your VPS first, using the README instructions.
+services:
+  mafia-companion:
+    image: mafia-companion:1.0.0
+    pull_policy: never
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+    name: ${PROXY_NETWORK}
