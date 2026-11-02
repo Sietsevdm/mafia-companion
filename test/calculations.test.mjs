@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {migrateProfile} from '../web/profile.mjs';
 import {rankAt,multipliers,crimeQuote,runnerProjection,businessQuote,policyMultiplier,tradeQuote} from '../web/calculations.mjs';
 const data=JSON.parse(await readFile(new URL('../web/data.json',import.meta.url),'utf8'));
 const base={xp:0,supporter:1,sunday:false,married:false,respect:0,art:0,reward:0,cooldown:0,weapon:1,owns:[],server:1};
@@ -19,3 +20,9 @@ test('Employee paid Sunday helpers both apply, marriage once',()=>{const p=multi
 test('Business price escalation and risk-adjusted yield',()=>{const a=data.assets.find(a=>a.id==='laundry'&&a.category==='business');assert.equal(a.price,350000);assert.equal(a.income,360);assert.equal(businessQuote(a,0,1,'stable').cost,350000);assert.equal(businessQuote(a,1,1,'stable').cost,385001);assert.ok(Math.abs(policyMultiplier('launder')-1.4580645161290322)<1e-10);});
 test('Freight risk applies to proceeds, not just profit',()=>{const r=tradeQuote({sale:1500000,cost:1000000,freight:50000,travel:0,risk:4,hours:8});assert.equal(r.expectedProfit,390000);assert.equal(r.hourly,48750);assert.equal(r.profit,450000);});
 test('Every crime has a finite quote and all catalog entries are unique',()=>{assert.equal(new Set(data.crimes.map(x=>x.id)).size,data.crimes.length);for(const c of data.crimes){const q=quote(c.id);for(const key of ['expectedXp','xpEnergy','gross','net','waitSeconds'])assert.ok(Number.isFinite(q[key]),c.id+' '+key);}});
+test('Respect is entered as a count and maps to game thresholds',()=>{for(const [points,bonus]of [[0,0],[4,0],[5,1],[149,4],[150,5],[2500,9]])assert.equal(multipliers(data.ranks,{...base,respectPoints:points}).respect,bonus);});
+test('Certified unique originals derive Collection income bonus',()=>{for(const [count,bonus]of [[0,0],[2,0],[3,1],[8,2],[9,3],[25,3]])assert.equal(multipliers(data.ranks,{...base,certifiedOriginals:count}).art,bonus);});
+test('Copied crime income is combined and is not multiplied twice',()=>{const p=multipliers(data.ranks,{...base,xp:2444000,respectPoints:2500,certifiedOriginals:9,supporter:1.25,sunday:true,married:true,useCrimeIncome:true,crimeIncome:250});assert.equal(p.active,3.5);assert.equal(p.business,16*1.25*1.5*1.1);});
+test('Existing bonus settings migrate to equivalent game counts',()=>{const p=migrateProfile({...base},{respect:5,art:2});assert.equal(p.respectPoints,150);assert.equal(p.certifiedOriginals,6);assert.equal(multipliers(data.ranks,p).respect,5);assert.equal(multipliers(data.ranks,p).art,2);});
+test('Existing count settings are not overwritten by migration',()=>{const p={...base,respectPoints:151,certifiedOriginals:7};migrateProfile(p,p);assert.equal(p.respectPoints,151);assert.equal(p.certifiedOriginals,7);});
+test('Tier zero correctly locks crimes requiring a personal weapon',()=>{assert.equal(quote('crime',{...base,weapon:0}).available,false);});

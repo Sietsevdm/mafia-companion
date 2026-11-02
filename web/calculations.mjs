@@ -14,9 +14,14 @@ export function multipliers(ranks, p) {
   const rank = rankAt(ranks, p.xp), calendar = p.sunday ? 1.5 : 1;
   const supporter = Number(p.supporter), marriage = p.married ? 1.1 : 1;
   const common = calendar * supporter * marriage;
-  const standing = rank.incomeMultiplier * (1 + p.respect / 100) * (1 + p.art / 100);
-  return { rank, common, active: standing * common * (1 + p.reward / 100), business: Math.min(16, Math.sqrt(Math.max(1, standing))) * common, employee: common * calendar * supporter };
+  const respect = p.respectPoints === undefined ? p.respect : respectBonus(p.respectPoints);
+  const art = p.certifiedOriginals === undefined ? p.art : Math.min(3, Math.floor(p.certifiedOriginals / 3));
+  const standing = rank.incomeMultiplier * (1 + respect / 100) * (1 + art / 100);
+  const active = p.useCrimeIncome ? 1 + p.crimeIncome / 100 : standing * common * (1 + p.reward / 100);
+  return { rank, common, respect, art, active, business: Math.min(16, Math.sqrt(Math.max(1, standing))) * common, employee: common * calendar * supporter };
 }
+export const respectThresholds = [0,5,15,35,75,150,300,600,1200,2500];
+export function respectBonus(points) { return Math.max(0, respectThresholds.findLastIndex(n => points >= n)); }
 export function crimeQuote(crime, index, ranks, profile) {
   const m = multipliers(ranks, profile), p = Math.min(.95, crime.chance + (m.rank.level - 1) / 24 * .34);
   const ammo = Math.ceil((index + 1) ** 2 / 4), supply = ammo * 2500;

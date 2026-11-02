@@ -1,5 +1,7 @@
 # Verification — 2 November 2026
 
+Profile update: English UI names verified against Mafia revision `0d6677ff6ebc6aec7aca2630f164a2805f6b6307` in public/profile-ui.js, public/premium.js, public/underworld-ui.js, public/art-market-ui.js, public/shop-ui.js and public/navigation.js. Balance snapshot is unchanged. Profile uses XP, Respect counts, Weapon tier, Supporter / Grand Supporter, game possession categories, crime income, CRIME COOLDOWNS and Certified unique originals. Respect/collection bonuses are derived. A copied combined crime income replaces, rather than compounds, its calculated factor. Six additional tests cover thresholds, migration, duplicate bonus prevention and no-weapon eligibility (20 tests total). Browser verified changing Respect, membership, collection count and copied crime income, derived summaries and persistence after reload, without console errors.
+
 Tutorial update: verified automatic first visit, all seven steps, Back/Next/Finish, saved dismissal after reload, header replay, permanent help and 12 glossary entries, profile shortcut, per-page explanations and field hints. Escape dismisses the modal. At a 390px viewport, the dialog fits without horizontal overflow. Browser console had no errors during these checks.
 
 Theme update: verified light/dark switching, saved theme after reload, dark table colors and browser console. Light supporting copy and labels now use larger sizes and stronger contrast. The theme script runs before styles to avoid a light flash on dark-mode reloads.

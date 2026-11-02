@@ -25,6 +25,7 @@ jobs:
           node --check web/guide.mjs
           node --check web/theme.js
           node --check web/help.mjs
+          node --check web/profile.mjs
       - name: Verify Nginx container
         run: |
           docker build -t ledger-smoke .
