@@ -22,3 +22,13 @@ Theme update: verified light/dark switching, saved theme after reload, dark tabl
 - Docker is not installed in the authoring environment. The actual Nginx container, Docker image build, Portainer deployment, proxy network, DNS and certificate issuance have not been run or verified on a VPS.
 
 The deployment package contains a no-build static-mount stack as well as a Dockerfile/image-based alternative. Follow README.md for setup and first deployment checks.
+
+## Recalculation — 8 November 2026 / 1.1.0
+
+- Started from latest companion main 7c2613579a47515ee9471549957a9108df083236; verified unchanged remote head before publication.
+- Audited current game 1.36.11 at 74b639548e8f0e851e7ccec8126458dc5ce93058; rechecked remote head before publication.
+- All 29 regression tests passed. Differential checker passed 6,748 scenarios and all exported snapshot catalogs against the separate reference checkout.
+- Browser verified Runner projection ($720,000 from ten Runners over 72 earning hours), 250-hour payback, flat business prices and three-decimal returns, current profile tier choices, Crown Vault threshold, art direct-sale guide, six-hour investment rate band and rank limit.
+- Browser freight example returned $444,678 with one unit and $441,828 with two crates, verifying partial-seizure rounding. Test input restored to one unit.
+- Browser console returned no errors. Desktop screenshot saved in the workspace output folder. No new mobile layout verification was performed for this calculation-focused update.
+- No game files or player databases were changed. Actual Nginx image checks run in GitHub Actions; no automatic VPS deployment is performed.

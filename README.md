@@ -4,13 +4,13 @@ A self-hosted guide and planning app for Mafia: The New Era. Eight interactive p
 
 ## Recommended: deploy like Apex League
 
-Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.0.7` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
+Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.1.0` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
 
 See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the complete setup, GHCR access, DNS, SSL and update instructions. GitHub Actions verifies the app and Nginx container before publishing AMD64/ARM64 images and a versioned release.
 
 ## What is included
 
-- Searchable strategy guide with expandable chapters and pinned source links.
+- Searchable strategy guide with expandable chapters.
 - First-visit walkthrough, replayable Help button, permanent Tutorial & help page, glossary and page-specific calculator instructions.
 - Light/dark mode toggle in the header. Uses your system preference initially and remembers your choice in this browser. Larger supporting text and stronger light-mode contrast.
 - Player profile: normal XP, weapon tier, owned categories, bonuses and server cash setting.
@@ -115,21 +115,21 @@ Open `http://127.0.0.1:4173`. Opening `index.html` directly as a file will not w
 npm test
 ```
 
-The tests cover rank boundaries, crime expected values, car-theft rewards, unlocks, passive bonuses, reinvestment, risk and business price escalation. Docker is not installed in the authoring environment, so an actual image build and container health check must be verified on your VPS. Browser verification is recorded in `VALIDATION.md`.
+The tests cover rank boundaries, crime expected values, car-theft rewards, unlocks, passive bonuses, reinvestment, risk and flat business copy prices. Docker is not installed in the authoring environment, so an actual image build and container health check must be verified on your VPS. Browser verification is recorded in `VALIDATION.md`.
 
 ## Updating
 
 For the static-mount deployment, replace the files under `/opt/mafia-companion/web`, then refresh the browser. If changing `nginx.conf`, restart the container. No database migration is needed. Files are served with revalidation to avoid stale balance data.
 
-For the image deployment, rebuild using a new tag such as `mafia-companion:1.0.7`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
+For the image deployment, rebuild using a new tag such as `mafia-companion:1.1.0`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
 
 ## Balance snapshot and assumptions
 
 Source: https://github.com/EraaZoraah/Mafia-The-new-Era
 
-Pinned revision: `0d6677ff6ebc6aec7aca2630f164a2805f6b6307`, checked 2 November 2026.
+Pinned revision: `74b639548e8f0e851e7ccec8126458dc5ce93058`, checked 8 November 2026 (game 1.36.11).
 
-- `web/data.json` holds the crime, business, rank, team and daily data used by calculators. Assets included are the relevant base catalog snapshot; the app does not provide an ownership simulator for every collector vehicle.
+- `web/data.json` holds the crime, business, rank, team and daily data used by calculators. Assets include the current exported catalog; the app does not provide an ownership simulator for every collector vehicle.
 - `web/calculations.mjs` contains pure calculation functions.
 - `web/guide.mjs` contains the guide chapters and source filenames.
 - Player-owned category checks, bonuses and settings are manual. No live quotes or account state are fetched.
@@ -138,9 +138,9 @@ Pinned revision: `0d6677ff6ebc6aec7aca2630f164a2805f6b6307`, checked 2 November 
 - Liquidation comparisons use minimum rounds, not extra-ammunition chance boosts.
 - Team estimates assume the selected player's rank/bonuses, full eligible crew and sufficient resources. They do not model recruitment time.
 - Runner forecasts use constant bonuses and manually repeated hourly hiring. They do not simulate calendar transitions, custody, expiry, cash caps or collection outages.
-- Employee accrual applies the paid/granted membership and Sunday factors through two helpers. For referral-only membership, select the tier and tick the referral-origin checkbox. Mixed-source memberships are not fully modeled; see CONTENT-AUDIT.md.
+- Employee accrual applies the effective paid/referral membership, Sunday and marriage factors once. Business rank scaling is logarithmic and capped at 1.15×. Forecasts hold these factors constant.
 - Business risk policies use long-run renewal averages: multiplier × (1 − risk × seizure) / (1 + risk × closure hours). Actual short-run results vary.
-- Investment calculations show base quoted interest, without custody reduction or account bonuses. No renewal is automatic.
+- Investment calculations use the current rate bands and rank-dependent principal limit. New positions have no membership/Sunday bonus; custody reduction and existing positions are not simulated. No renewal is automatic.
 - XP planner freezes rank/chance and ignores promotion refills; its regeneration time is an energy-only scenario, not a forecast of real completion time.
 - All calculator assumptions describe fictional in-game money.
 

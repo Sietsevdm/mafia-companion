@@ -1,6 +1,6 @@
 {
-  "revision": "0d6677ff6ebc6aec7aca2630f164a2805f6b6307",
-  "checked": "2026-11-02",
+  "revision": "74b639548e8f0e851e7ccec8126458dc5ce93058",
+  "checked": "2026-11-08",
   "crimes": [
     {
       "id": "courier",
@@ -8,12 +8,16 @@
       "energy": 8,
       "cooldown": 30000,
       "chance": 0.95,
-      "reward": 1600,
+      "reward": 4800,
       "xp": 80,
       "requiredXp": 0,
       "image": "/images/crime-courier.jpg",
       "severity": 1,
-      "risk": "Low"
+      "risk": "Low",
+      "requiredRank": 1,
+      "requiredRankName": "Outsider",
+      "ammo": 1,
+      "tier": 1
     },
     {
       "id": "crime",
@@ -21,12 +25,16 @@
       "energy": 10,
       "cooldown": 35000,
       "chance": 0.9,
-      "reward": 2000,
+      "reward": 6000,
       "xp": 100,
       "requiredXp": 0,
       "image": "/images/crime-crime.jpg",
       "severity": 2,
-      "risk": "Low"
+      "risk": "Low",
+      "requiredRank": 1,
+      "requiredRankName": "Outsider",
+      "ammo": 1,
+      "tier": 1
     },
     {
       "id": "mugging",
@@ -34,12 +42,16 @@
       "energy": 10,
       "cooldown": 40000,
       "chance": 0.88,
-      "reward": 2800,
+      "reward": 8400,
       "xp": 120,
       "requiredXp": 0,
       "image": "/images/crime-mugging.jpg",
       "severity": 3,
-      "risk": "Low"
+      "risk": "Low",
+      "requiredRank": 1,
+      "requiredRankName": "Outsider",
+      "ammo": 3,
+      "tier": 1
     },
     {
       "id": "shop",
@@ -47,12 +59,16 @@
       "energy": 12,
       "cooldown": 45000,
       "chance": 0.86,
-      "reward": 4400,
+      "reward": 13200,
       "xp": 160,
       "requiredXp": 0,
       "image": "/images/crime-shop-v2.png",
       "severity": 4,
-      "risk": "Low"
+      "risk": "Low",
+      "requiredRank": 1,
+      "requiredRankName": "Outsider",
+      "ammo": 4,
+      "tier": 1
     },
     {
       "id": "car",
@@ -60,12 +76,16 @@
       "energy": 14,
       "cooldown": 60000,
       "chance": 0.84,
-      "reward": 5600,
+      "reward": 16800,
       "xp": 240,
       "requiredXp": 0,
       "image": "/images/crime-car.jpg",
       "severity": 5,
-      "risk": "Low"
+      "risk": "Low",
+      "requiredRank": 1,
+      "requiredRankName": "Outsider",
+      "ammo": 4,
+      "tier": 1
     },
     {
       "id": "assault",
@@ -73,12 +93,16 @@
       "energy": 15,
       "cooldown": 75000,
       "chance": 0.83,
-      "reward": 7200,
+      "reward": 21600,
       "xp": 280,
-      "requiredXp": 100,
+      "requiredXp": 7800,
       "image": "/images/crime-assault.png",
       "severity": 6,
-      "risk": "Moderate"
+      "risk": "Moderate",
+      "requiredRank": 2,
+      "requiredRankName": "Errand Runner",
+      "ammo": 9,
+      "tier": 1
     },
     {
       "id": "vip",
@@ -86,12 +110,16 @@
       "energy": 15,
       "cooldown": 90000,
       "chance": 0.82,
-      "reward": 8000,
+      "reward": 24000,
       "xp": 320,
-      "requiredXp": 100,
+      "requiredXp": 17100,
       "image": "/images/crime-vip.jpg",
       "severity": 7,
-      "risk": "Moderate"
+      "risk": "Moderate",
+      "requiredRank": 3,
+      "requiredRankName": "Lookout",
+      "ammo": 13,
+      "tier": 1
     },
     {
       "id": "smuggle",
@@ -99,12 +127,16 @@
       "energy": 16,
       "cooldown": 100000,
       "chance": 0.8,
-      "reward": 10000,
+      "reward": 30000,
       "xp": 400,
-      "requiredXp": 100,
+      "requiredXp": 28100,
       "image": "/images/crime-smuggle.jpg",
       "severity": 8,
-      "risk": "Moderate"
+      "risk": "Moderate",
+      "requiredRank": 4,
+      "requiredRankName": "Pickpocket",
+      "ammo": 16,
+      "tier": 2
     },
     {
       "id": "chop",
@@ -112,12 +144,16 @@
       "energy": 18,
       "cooldown": 120000,
       "chance": 0.78,
-      "reward": 16800,
+      "reward": 50400,
       "xp": 480,
-      "requiredXp": 250,
+      "requiredXp": 41100,
       "image": "/images/crime-chop.jpg",
       "severity": 9,
-      "risk": "Moderate"
+      "risk": "Moderate",
+      "requiredRank": 5,
+      "requiredRankName": "Hustler",
+      "ammo": 21,
+      "tier": 2
     },
     {
       "id": "getaway",
@@ -125,13 +161,17 @@
       "energy": 18,
       "cooldown": 120000,
       "chance": 0.76,
-      "reward": 18000,
+      "reward": 54000,
       "xp": 520,
-      "requiredXp": 250,
+      "requiredXp": 41100,
       "requires": "car",
       "image": "/images/crime-getaway.jpg",
       "severity": 10,
-      "risk": "Moderate"
+      "risk": "Moderate",
+      "requiredRank": 5,
+      "requiredRankName": "Hustler",
+      "ammo": 25,
+      "tier": 2
     },
     {
       "id": "summit",
@@ -139,13 +179,17 @@
       "energy": 20,
       "cooldown": 150000,
       "chance": 0.74,
-      "reward": 22000,
+      "reward": 66000,
       "xp": 600,
-      "requiredXp": 500,
+      "requiredXp": 56500,
       "requires": "home",
       "image": "/images/crime-summit.jpg",
       "severity": 11,
-      "risk": "Moderate"
+      "risk": "Moderate",
+      "requiredRank": 6,
+      "requiredRankName": "Street Operator",
+      "ammo": 31,
+      "tier": 2
     },
     {
       "id": "syndicate",
@@ -153,13 +197,17 @@
       "energy": 20,
       "cooldown": 150000,
       "chance": 0.72,
-      "reward": 26000,
+      "reward": 78000,
       "xp": 680,
-      "requiredXp": 500,
+      "requiredXp": 74800,
       "requires": "business",
       "image": "/images/crime-syndicate.jpg",
       "severity": 12,
-      "risk": "High"
+      "risk": "High",
+      "requiredRank": 7,
+      "requiredRankName": "Enforcer",
+      "ammo": 36,
+      "tier": 2
     },
     {
       "id": "jewelry",
@@ -167,12 +215,16 @@
       "energy": 25,
       "cooldown": 180000,
       "chance": 0.7,
-      "reward": 34000,
+      "reward": 102000,
       "xp": 800,
-      "requiredXp": 500,
+      "requiredXp": 96500,
       "image": "/images/crime-jewelry.jpg",
       "severity": 13,
-      "risk": "High"
+      "risk": "High",
+      "requiredRank": 8,
+      "requiredRankName": "Associate",
+      "ammo": 43,
+      "tier": 2
     },
     {
       "id": "cargo",
@@ -180,12 +232,16 @@
       "energy": 25,
       "cooldown": 180000,
       "chance": 0.68,
-      "reward": 40000,
-      "xp": 880,
-      "requiredXp": 1000,
+      "reward": 120000,
+      "xp": 875,
+      "requiredXp": 122200,
       "image": "/images/crime-cargo.jpg",
       "severity": 14,
-      "risk": "High"
+      "risk": "High",
+      "requiredRank": 9,
+      "requiredRankName": "Made Member",
+      "ammo": 49,
+      "tier": 2
     },
     {
       "id": "airlift",
@@ -193,13 +249,17 @@
       "energy": 25,
       "cooldown": 200000,
       "chance": 0.66,
-      "reward": 48000,
-      "xp": 1040,
-      "requiredXp": 1000,
+      "reward": 144000,
+      "xp": 875,
+      "requiredXp": 152600,
       "requires": "helicopter",
       "image": "/images/crime-airlift-v2.png",
       "severity": 15,
-      "risk": "High"
+      "risk": "High",
+      "requiredRank": 10,
+      "requiredRankName": "Soldier",
+      "ammo": 57,
+      "tier": 3
     },
     {
       "id": "maritime",
@@ -207,13 +267,17 @@
       "energy": 28,
       "cooldown": 220000,
       "chance": 0.64,
-      "reward": 60000,
+      "reward": 180000,
       "xp": 960,
-      "requiredXp": 1500,
+      "requiredXp": 188700,
       "requires": "yacht",
       "image": "/images/crime-maritime.jpg",
       "severity": 16,
-      "risk": "High"
+      "risk": "High",
+      "requiredRank": 11,
+      "requiredRankName": "Trusted Soldier",
+      "ammo": 64,
+      "tier": 3
     },
     {
       "id": "hostage",
@@ -221,12 +285,16 @@
       "energy": 30,
       "cooldown": 240000,
       "chance": 0.62,
-      "reward": 64000,
-      "xp": 1200,
-      "requiredXp": 2000,
+      "reward": 192000,
+      "xp": 1050,
+      "requiredXp": 282000,
       "image": "/images/crime-hostage.jpg",
       "severity": 17,
-      "risk": "High"
+      "risk": "High",
+      "requiredRank": 13,
+      "requiredRankName": "Crew Leader",
+      "ammo": 73,
+      "tier": 3
     },
     {
       "id": "overseas",
@@ -234,13 +302,17 @@
       "energy": 32,
       "cooldown": 260000,
       "chance": 0.6,
-      "reward": 88000,
-      "xp": 1440,
-      "requiredXp": 2500,
+      "reward": 264000,
+      "xp": 1120,
+      "requiredXp": 413100,
       "requires": "jet",
       "image": "/images/crime-overseas.jpg",
       "severity": 18,
-      "risk": "Extreme"
+      "risk": "Extreme",
+      "requiredRank": 15,
+      "requiredRankName": "Capo",
+      "ammo": 81,
+      "tier": 3
     },
     {
       "id": "hit",
@@ -248,12 +320,16 @@
       "energy": 35,
       "cooldown": 300000,
       "chance": 0.5,
-      "reward": 96000,
-      "xp": 1600,
-      "requiredXp": 4000,
+      "reward": 288000,
+      "xp": 1225,
+      "requiredXp": 597100,
       "image": "/images/crime-hit.jpg",
       "severity": 19,
-      "risk": "Extreme"
+      "risk": "Extreme",
+      "requiredRank": 17,
+      "requiredRankName": "Consigliere",
+      "ammo": 91,
+      "tier": 3
     },
     {
       "id": "vault",
@@ -261,12 +337,16 @@
       "energy": 40,
       "cooldown": 360000,
       "chance": 0.4,
-      "reward": 152000,
-      "xp": 2000,
-      "requiredXp": 8000,
+      "reward": 456000,
+      "xp": 1400,
+      "requiredXp": 1021700,
       "image": "/images/crime-vault.jpg",
       "severity": 20,
-      "risk": "Extreme"
+      "risk": "Extreme",
+      "requiredRank": 20,
+      "requiredRankName": "Don",
+      "ammo": 100,
+      "tier": 3
     }
   ],
   "ranks": [
@@ -344,106 +424,106 @@
       "name": "Trusted Soldier",
       "xp": 188700,
       "level": 11,
-      "incomeMultiplier": 4.3,
-      "promotionPercent": 70.63492063492063
+      "incomeMultiplier": 3.45,
+      "promotionPercent": 36.904761904761905
     },
     {
       "name": "Racketeer",
       "xp": 231400,
       "level": 12,
-      "incomeMultiplier": 6.04,
-      "promotionPercent": 40.46511627906977
+      "incomeMultiplier": 4.72,
+      "promotionPercent": 36.81159420289855
     },
     {
       "name": "Crew Leader",
       "xp": 282000,
       "level": 13,
-      "incomeMultiplier": 8.48,
-      "promotionPercent": 40.397350993377486
+      "incomeMultiplier": 6.46,
+      "promotionPercent": 36.86440677966103
     },
     {
       "name": "Captain",
       "xp": 342000,
       "level": 14,
-      "incomeMultiplier": 11.91,
-      "promotionPercent": 40.44811320754715
+      "incomeMultiplier": 8.85,
+      "promotionPercent": 36.99690402476781
     },
     {
       "name": "Capo",
       "xp": 413100,
       "level": 15,
-      "incomeMultiplier": 16.73,
-      "promotionPercent": 40.470193115029396
+      "incomeMultiplier": 12.11,
+      "promotionPercent": 36.83615819209039
     },
     {
       "name": "Senior Capo",
       "xp": 497300,
       "level": 16,
-      "incomeMultiplier": 23.5,
-      "promotionPercent": 40.46622833233711
+      "incomeMultiplier": 16.58,
+      "promotionPercent": 36.91164327002476
     },
     {
       "name": "Consigliere",
       "xp": 597100,
       "level": 17,
-      "incomeMultiplier": 33,
-      "promotionPercent": 40.42553191489362
+      "incomeMultiplier": 22.7,
+      "promotionPercent": 36.91194209891437
     },
     {
       "name": "Underboss",
       "xp": 715400,
       "level": 18,
-      "incomeMultiplier": 46.36,
-      "promotionPercent": 40.48484848484848
+      "incomeMultiplier": 31.08,
+      "promotionPercent": 36.916299559471355
     },
     {
       "name": "Boss",
       "xp": 855600,
       "level": 19,
-      "incomeMultiplier": 65.11,
-      "promotionPercent": 40.44434857635893
+      "incomeMultiplier": 42.55,
+      "promotionPercent": 36.904761904761905
     },
     {
       "name": "Don",
       "xp": 1021700,
       "level": 20,
-      "incomeMultiplier": 91.46,
-      "promotionPercent": 40.46997389033942
+      "incomeMultiplier": 58.24,
+      "promotionPercent": 36.87426556991775
     },
     {
       "name": "Crime Lord",
       "xp": 1218500,
       "level": 21,
-      "incomeMultiplier": 128.46,
-      "promotionPercent": 40.45484364749618
+      "incomeMultiplier": 79.73,
+      "promotionPercent": 36.89903846153846
     },
     {
       "name": "Kingpin",
       "xp": 1451800,
       "level": 22,
-      "incomeMultiplier": 180.43,
-      "promotionPercent": 40.456173127821884
+      "incomeMultiplier": 109.15,
+      "promotionPercent": 36.899535933776505
     },
     {
       "name": "Shadow Sovereign",
       "xp": 1728200,
       "level": 23,
-      "incomeMultiplier": 253.44,
-      "promotionPercent": 40.464446045557835
+      "incomeMultiplier": 149.41,
+      "promotionPercent": 36.885020613834165
     },
     {
       "name": "Syndicate Emperor",
       "xp": 2055800,
       "level": 24,
-      "incomeMultiplier": 355.98,
-      "promotionPercent": 40.45928030303032
+      "incomeMultiplier": 204.54,
+      "promotionPercent": 36.89846730473194
     },
     {
       "name": "The Godfather",
       "xp": 2444000,
       "level": 25,
-      "incomeMultiplier": 500,
-      "promotionPercent": 40.457329063430514
+      "incomeMultiplier": 280,
+      "promotionPercent": 36.892539356605084
     }
   ],
   "assets": [
@@ -451,7 +531,7 @@
       "id": "coffee",
       "name": "Neighborhood coffeeshop",
       "price": 120000,
-      "income": 120,
+      "income": 500,
       "category": "business",
       "image": "/images/business-coffee.jpg",
       "perks": {},
@@ -463,7 +543,7 @@
       "id": "laundry",
       "name": "Laundromat",
       "price": 350000,
-      "income": 360,
+      "income": 1458,
       "category": "business",
       "image": "/images/business-laundry-v2.png",
       "perks": {},
@@ -475,7 +555,7 @@
       "id": "bar",
       "name": "Cocktail bar",
       "price": 880000,
-      "income": 840,
+      "income": 3667,
       "category": "business",
       "image": "/images/business-bar.jpg",
       "perks": {},
@@ -487,7 +567,7 @@
       "id": "garage",
       "name": "Auto workshop",
       "price": 1800000,
-      "income": 1620,
+      "income": 7500,
       "category": "business",
       "image": "/images/business-garage.jpg",
       "perks": {},
@@ -499,7 +579,7 @@
       "id": "restaurant",
       "name": "Fine dining restaurant",
       "price": 3900000,
-      "income": 3300,
+      "income": 16250,
       "category": "business",
       "image": "/images/business-restaurant.jpg",
       "perks": {},
@@ -511,7 +591,7 @@
       "id": "club",
       "name": "Nightclub",
       "price": 9750000,
-      "income": 7200,
+      "income": 40625,
       "category": "business",
       "image": "/images/business-club.jpg",
       "perks": {},
@@ -523,7 +603,7 @@
       "id": "logistics",
       "name": "Logistics company",
       "price": 23800000,
-      "income": 15600,
+      "income": 99167,
       "category": "business",
       "image": "/images/business-logistics.jpg",
       "perks": {},
@@ -535,7 +615,7 @@
       "id": "hotel",
       "name": "Boutique hotel",
       "price": 60000000,
-      "income": 33600,
+      "income": 222222,
       "category": "business",
       "image": "/images/business-hotel.jpg",
       "perks": {},
@@ -547,7 +627,7 @@
       "id": "resort",
       "name": "Five-star resort",
       "price": 176000000,
-      "income": 90000,
+      "income": 586667,
       "category": "business",
       "image": "/images/business-resort.jpg",
       "perks": {},
@@ -559,7 +639,7 @@
       "id": "casino",
       "name": "Grand casino",
       "price": 500000000,
-      "income": 228000,
+      "income": 1515152,
       "category": "business",
       "image": "/images/business-casino.jpg",
       "perks": {},
@@ -571,7 +651,7 @@
       "id": "palace",
       "name": "Palace casino resort",
       "price": 2250000000,
-      "income": 864000,
+      "income": 6250000,
       "category": "business",
       "image": "/images/business-palace.jpg",
       "perks": {},
@@ -716,7 +796,7 @@
       "image": "/images/car-m5.jpg",
       "perks": {
         "rewardBps": 87,
-        "energyCapacity": 0
+        "energyCapacity": 22
       },
       "title": "Collector · BMW M5",
       "unlock": "Midnight getaway",
@@ -732,7 +812,7 @@
       "image": "/images/car-g63.jpg",
       "perks": {
         "rewardBps": 98,
-        "energyCapacity": 0
+        "energyCapacity": 22
       },
       "title": "Collector · Mercedes-AMG G 63",
       "unlock": "Midnight getaway",
@@ -748,7 +828,7 @@
       "image": "/images/car-911.jpg",
       "perks": {
         "rewardBps": 110,
-        "energyCapacity": 5
+        "energyCapacity": 35
       },
       "title": "Collector · Porsche 911 Turbo S",
       "unlock": "Midnight getaway",
@@ -764,7 +844,7 @@
       "image": "/images/car-continental.jpg",
       "perks": {
         "rewardBps": 113,
-        "energyCapacity": 5
+        "energyCapacity": 40
       },
       "title": "Collector · Bentley Continental GT",
       "unlock": "Midnight getaway",
@@ -780,7 +860,7 @@
       "image": "/images/car-ghost.jpg",
       "perks": {
         "rewardBps": 119,
-        "energyCapacity": 8
+        "energyCapacity": 45
       },
       "title": "Collector · Rolls-Royce Ghost",
       "unlock": "Midnight getaway",
@@ -796,7 +876,7 @@
       "image": "/images/car-cullinan.jpg",
       "perks": {
         "rewardBps": 125,
-        "energyCapacity": 10
+        "energyCapacity": 45
       },
       "title": "Collector · Rolls-Royce Cullinan",
       "unlock": "Midnight getaway",
@@ -812,7 +892,7 @@
       "image": "/images/car-750s.jpg",
       "perks": {
         "rewardBps": 127,
-        "energyCapacity": 12
+        "energyCapacity": 45
       },
       "title": "Collector · McLaren 750S",
       "unlock": "Midnight getaway",
@@ -828,7 +908,7 @@
       "image": "/images/car-db12.jpg",
       "perks": {
         "rewardBps": 129,
-        "energyCapacity": 15
+        "energyCapacity": 45
       },
       "title": "Collector · Aston Martin DB12",
       "unlock": "Midnight getaway",
@@ -844,7 +924,7 @@
       "image": "/images/car-temerario.jpg",
       "perks": {
         "rewardBps": 132,
-        "energyCapacity": 18
+        "energyCapacity": 45
       },
       "title": "Collector · Lamborghini Temerario",
       "unlock": "Midnight getaway",
@@ -860,7 +940,7 @@
       "image": "/images/car-revuelto.jpg",
       "perks": {
         "rewardBps": 137,
-        "energyCapacity": 22
+        "energyCapacity": 50
       },
       "title": "Collector · Lamborghini Revuelto",
       "unlock": "Midnight getaway",
@@ -876,7 +956,7 @@
       "image": "/images/car-12cilindri.jpg",
       "perks": {
         "rewardBps": 141,
-        "energyCapacity": 26
+        "energyCapacity": 50
       },
       "title": "Collector · Ferrari 12Cilindri",
       "unlock": "Midnight getaway",
@@ -892,7 +972,7 @@
       "image": "/images/car-nevera.jpg",
       "perks": {
         "rewardBps": 145,
-        "energyCapacity": 30
+        "energyCapacity": 50
       },
       "title": "Collector · Rimac Nevera",
       "unlock": "Midnight getaway",
@@ -908,7 +988,7 @@
       "image": "/images/car-jesko.jpg",
       "perks": {
         "rewardBps": 149,
-        "energyCapacity": 35
+        "energyCapacity": 50
       },
       "title": "Collector · Koenigsegg Jesko",
       "unlock": "Midnight getaway",
@@ -924,7 +1004,7 @@
       "image": "/images/car-utopia.jpg",
       "perks": {
         "rewardBps": 152,
-        "energyCapacity": 40
+        "energyCapacity": 50
       },
       "title": "Collector · Pagani Utopia",
       "unlock": "Midnight getaway",
@@ -940,7 +1020,7 @@
       "image": "/images/car-f80.jpg",
       "perks": {
         "rewardBps": 155,
-        "energyCapacity": 45
+        "energyCapacity": 50
       },
       "title": "Collector · Ferrari F80",
       "unlock": "Midnight getaway",
@@ -1431,6 +1511,36 @@
       "limit": 1
     },
     {
+      "id": "vehicle-warehouse",
+      "name": "Grand Vehicle Warehouse",
+      "price": 7500000,
+      "storageKind": "vehicle",
+      "capacity": 20,
+      "description": "Twenty secured collection bays. Own up to five warehouses for one hundred stolen vehicles.",
+      "image": "/images/warehouse-vehicle.png",
+      "category": "garage",
+      "limit": 5,
+      "income": 0,
+      "perks": {},
+      "title": "Logistics Patron · Grand Vehicle Warehouse",
+      "unlock": "Secured logistics storage"
+    },
+    {
+      "id": "production-warehouse",
+      "name": "Obsidian Production Warehouse",
+      "price": 15000000,
+      "storageKind": "production",
+      "capacity": 1000,
+      "description": "One thousand crates of production capacity shared across all unsold products. Own up to five warehouses.",
+      "image": "/images/warehouse-production.png",
+      "category": "garage",
+      "limit": 5,
+      "income": 0,
+      "perks": {},
+      "title": "Logistics Patron · Obsidian Production Warehouse",
+      "unlock": "Secured logistics storage"
+    },
+    {
       "id": "rs7",
       "name": "Audi RS7 Sportback",
       "category": "car",
@@ -1441,7 +1551,7 @@
       "image": "/images/vehicle-rs7.png",
       "perks": {
         "rewardBps": 90,
-        "energyCapacity": 0
+        "energyCapacity": 22
       },
       "title": "Performance Collector · Audi RS7 Sportback",
       "unlock": "Midnight getaway",
@@ -1458,7 +1568,7 @@
       "image": "/images/vehicle-rsq8.png",
       "perks": {
         "rewardBps": 98,
-        "energyCapacity": 0
+        "energyCapacity": 22
       },
       "title": "Performance Collector · Audi RS Q8 · Obsidian Black",
       "unlock": "Midnight getaway",
@@ -1519,6 +1629,431 @@
       "unlock": "Six purchased-car bays",
       "description": "Six secured bays for purchased cars. Stolen vehicles use separate vehicle warehouses.",
       "image": "/images/garage-sovereign.png"
+    },
+    {
+      "id": "audi-a7",
+      "name": "Audi A7 Sportback",
+      "price": 8500000,
+      "tier": "Executive",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-audi-a7.png",
+      "perks": {
+        "rewardBps": 84,
+        "energyCapacity": 0
+      },
+      "title": "Collector · Audi A7 Sportback",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "bmw-m440",
+      "name": "BMW M440i Convertible",
+      "price": 10000000,
+      "tier": "Performance",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-bmw-m440.png",
+      "perks": {
+        "rewardBps": 87,
+        "energyCapacity": 22
+      },
+      "title": "Collector · BMW M440i Convertible",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "mercedes-cle",
+      "name": "Mercedes-Benz CLE Cabriolet",
+      "price": 12500000,
+      "tier": "Grand touring",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-mercedes-cle.png",
+      "perks": {
+        "rewardBps": 91,
+        "energyCapacity": 22
+      },
+      "title": "Collector · Mercedes-Benz CLE Cabriolet",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "lexus-ls",
+      "name": "Lexus LS 500",
+      "price": 15000000,
+      "tier": "Luxury",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-lexus-ls.png",
+      "perks": {
+        "rewardBps": 94,
+        "energyCapacity": 22
+      },
+      "title": "Collector · Lexus LS 500",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "genesis-g90",
+      "name": "Genesis G90",
+      "price": 17000000,
+      "tier": "Luxury",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-genesis-g90.png",
+      "perks": {
+        "rewardBps": 96,
+        "energyCapacity": 22
+      },
+      "title": "Collector · Genesis G90",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "porsche-panamera",
+      "name": "Porsche Panamera Turbo",
+      "price": 24000000,
+      "tier": "Performance",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-porsche-panamera.png",
+      "perks": {
+        "rewardBps": 103,
+        "energyCapacity": 35
+      },
+      "title": "Collector · Porsche Panamera Turbo",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "maserati-granturismo",
+      "name": "Maserati GranTurismo",
+      "price": 30000000,
+      "tier": "Grand touring",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-maserati-granturismo.png",
+      "perks": {
+        "rewardBps": 107,
+        "energyCapacity": 35
+      },
+      "title": "Collector · Maserati GranTurismo",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "bentley-flying-spur",
+      "name": "Bentley Flying Spur",
+      "price": 45000000,
+      "tier": "Ultra luxury",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-bentley-flying-spur.png",
+      "perks": {
+        "rewardBps": 115,
+        "energyCapacity": 40
+      },
+      "title": "Collector · Bentley Flying Spur",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "rolls-dawn",
+      "name": "Rolls-Royce Dawn",
+      "price": 70000000,
+      "tier": "Ultra luxury",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-rolls-dawn.png",
+      "perks": {
+        "rewardBps": 123,
+        "energyCapacity": 45
+      },
+      "title": "Collector · Rolls-Royce Dawn",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "mercedes-pagoda",
+      "name": "Mercedes-Benz 280 SL Pagoda",
+      "price": 9000000,
+      "tier": "Classic collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-mercedes-pagoda.png",
+      "perks": {
+        "rewardBps": 85,
+        "energyCapacity": 22
+      },
+      "title": "Collector · Mercedes-Benz 280 SL Pagoda",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "bmw-507",
+      "name": "BMW 507 Roadster",
+      "price": 22000000,
+      "tier": "Classic collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-bmw-507.png",
+      "perks": {
+        "rewardBps": 101,
+        "energyCapacity": 35
+      },
+      "title": "Collector · BMW 507 Roadster",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "mercedes-300sl-roadster",
+      "name": "Mercedes-Benz 300 SL Roadster",
+      "price": 35000000,
+      "tier": "Classic collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-mercedes-300sl-roadster.png",
+      "perks": {
+        "rewardBps": 110,
+        "energyCapacity": 40
+      },
+      "title": "Collector · Mercedes-Benz 300 SL Roadster",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "aston-db5",
+      "name": "Aston Martin DB5",
+      "price": 45000000,
+      "tier": "Classic collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-aston-db5.png",
+      "perks": {
+        "rewardBps": 115,
+        "energyCapacity": 45
+      },
+      "title": "Collector · Aston Martin DB5",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "lamborghini-miura",
+      "name": "Lamborghini Miura SV",
+      "price": 75000000,
+      "tier": "Classic collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-lamborghini-miura.png",
+      "perks": {
+        "rewardBps": 125,
+        "energyCapacity": 45
+      },
+      "title": "Collector · Lamborghini Miura SV",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "alfa-8c-classic",
+      "name": "Alfa Romeo 8C 2900 Spider",
+      "price": 110000000,
+      "tier": "Museum collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-alfa-8c-classic.png",
+      "perks": {
+        "rewardBps": 132,
+        "energyCapacity": 50
+      },
+      "title": "Collector · Alfa Romeo 8C 2900 Spider",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "ferrari-250-california",
+      "name": "Ferrari 250 GT California Spyder",
+      "price": 180000000,
+      "tier": "Museum collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-ferrari-250-california.png",
+      "perks": {
+        "rewardBps": 142,
+        "energyCapacity": 50
+      },
+      "title": "Collector · Ferrari 250 GT California Spyder",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "bugatti-57sc",
+      "name": "Bugatti Type 57SC Atlantic",
+      "price": 250000000,
+      "tier": "Museum collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-bugatti-57sc.png",
+      "perks": {
+        "rewardBps": 148,
+        "energyCapacity": 50
+      },
+      "title": "Collector · Bugatti Type 57SC Atlantic",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "ferrari-250-gto",
+      "name": "Ferrari 250 GTO",
+      "price": 450000000,
+      "tier": "Museum collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-ferrari-250-gto.png",
+      "perks": {
+        "rewardBps": 159,
+        "energyCapacity": 50
+      },
+      "title": "Collector · Ferrari 250 GTO",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "escalade",
+      "name": "Cadillac Escalade",
+      "price": 16000000,
+      "tier": "Luxury SUV",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-escalade.png",
+      "perks": {
+        "rewardBps": 95,
+        "energyCapacity": 22
+      },
+      "title": "Collector · Cadillac Escalade",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "maybach-s680",
+      "name": "Mercedes-Maybach S 680",
+      "price": 38000000,
+      "tier": "Ultra luxury",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-maybach-s680.png",
+      "perks": {
+        "rewardBps": 112,
+        "energyCapacity": 40
+      },
+      "title": "Collector · Mercedes-Maybach S 680",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "phantom-extended",
+      "name": "Rolls-Royce Phantom Extended",
+      "price": 65000000,
+      "tier": "Ultra luxury",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-phantom-extended.png",
+      "perks": {
+        "rewardBps": 122,
+        "energyCapacity": 45
+      },
+      "title": "Collector · Rolls-Royce Phantom Extended",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "phantom-limousine",
+      "name": "Rolls-Royce Phantom Limousine",
+      "price": 100000000,
+      "tier": "Bespoke limousine",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-phantom-limousine.png",
+      "perks": {
+        "rewardBps": 130,
+        "energyCapacity": 45
+      },
+      "title": "Collector · Rolls-Royce Phantom Limousine",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "jaguar-xk120",
+      "name": "Jaguar XK120 Roadster",
+      "price": 18000000,
+      "tier": "Classic collector",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-jaguar-xk120.png",
+      "perks": {
+        "rewardBps": 98,
+        "energyCapacity": 30
+      },
+      "title": "Collector · Jaguar XK120 Roadster",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "urus",
+      "name": "Lamborghini Urus",
+      "price": 24000000,
+      "tier": "Luxury SUV",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-urus.png",
+      "perks": {
+        "rewardBps": 103,
+        "energyCapacity": 35
+      },
+      "title": "Collector · Lamborghini Urus",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
+    },
+    {
+      "id": "chiron",
+      "name": "Bugatti Chiron",
+      "price": 240000000,
+      "tier": "Hypercar",
+      "category": "car",
+      "income": 0,
+      "limit": 1,
+      "image": "/images/car-chiron.png",
+      "perks": {
+        "rewardBps": 147,
+        "energyCapacity": 50
+      },
+      "title": "Collector · Bugatti Chiron",
+      "unlock": "Midnight getaway",
+      "description": "A private collection car. Requires a free garage bay. One per model; resale returns 80% of the paid price."
     },
     {
       "id": "atelier",
@@ -1759,104 +2294,254 @@
       "title": "Exclusive Collector · Bugatti La Voiture Noire",
       "unlock": "Midnight getaway",
       "description": "Exclusive modern collection car. Adds energy capacity and shorter crime cooldowns, alongside its price-scaled crime-income perk. Requires one free garage bay."
+    },
+    {
+      "id": "private-island-retreat",
+      "name": "Private Island Retreat",
+      "category": "home",
+      "price": 35000000000,
+      "income": 0,
+      "limit": 1,
+      "requiredRank": 21,
+      "perks": {},
+      "title": "Island Sovereign",
+      "description": "An offshore estate. Personal production costs 10% less and failed standard crimes have 5 percentage points less arrest risk.",
+      "image": "/images/private-island-retreat.jpg"
+    },
+    {
+      "id": "private-airfield",
+      "name": "Private Airfield",
+      "category": "jet",
+      "price": 40000000000,
+      "income": 0,
+      "limit": 1,
+      "requiredRank": 22,
+      "perks": {},
+      "title": "Lord of the Runway",
+      "description": "Requires a private jet to fly. Turnaround drops from 15 to 10 minutes; personal air cargo is 25% faster with 20% lower interception risk.",
+      "image": "/images/private-airfield.jpg"
     }
   ],
   "teams": [
     {
-      "id": "velvet",
+      "id": "velvet-handoff",
       "name": "The Velvet Handoff",
       "size": 2,
-      "requiredXp": 500,
-      "energy": 20,
       "xp": 1200,
-      "chance": 0.88,
-      "ammo": 25,
-      "tier": 1,
+      "cash": 30000,
       "fee": 500,
-      "cash": 30000
+      "energy": 20,
+      "ammo": 5,
+      "tier": 1,
+      "requiredXp": 500,
+      "chance": 0.88,
+      "description": "A discreet courier and a getaway driver recover a misplaced briefcase.",
+      "image": "/images/team-velvet-handoff.png"
     },
     {
-      "id": "express",
+      "id": "midnight-express",
       "name": "Midnight Express",
       "size": 3,
-      "requiredXp": 1000,
-      "energy": 25,
       "xp": 2000,
-      "chance": 0.85,
-      "ammo": 60,
-      "tier": 1,
+      "cash": 75000,
       "fee": 1500,
-      "cash": 75000
+      "energy": 25,
+      "ammo": 12,
+      "tier": 1,
+      "requiredXp": 7800,
+      "chance": 0.85,
+      "description": "A scout, driver and handler intercept a fictional contraband delivery.",
+      "image": "/images/team-midnight-express.png"
     },
     {
-      "id": "gallery",
+      "id": "gilded-gallery",
       "name": "The Gilded Gallery",
       "size": 4,
-      "requiredXp": 4000,
-      "energy": 30,
       "xp": 3200,
-      "chance": 0.82,
-      "ammo": 120,
-      "tier": 2,
+      "cash": 150000,
       "fee": 4000,
-      "cash": 150000
+      "energy": 30,
+      "ammo": 25,
+      "tier": 2,
+      "requiredXp": 56500,
+      "chance": 0.82,
+      "description": "Four specialists retrieve an underworld collector’s disputed masterpiece.",
+      "image": "/images/team-gilded-gallery.png"
     },
     {
-      "id": "crown",
+      "id": "crown-vault",
       "name": "The Crown Vault",
       "size": 5,
-      "requiredXp": 8000,
-      "energy": 35,
       "xp": 5000,
-      "chance": 0.8,
-      "ammo": 200,
-      "tier": 3,
+      "cash": 250000,
       "fee": 8000,
-      "cash": 250000
+      "energy": 35,
+      "ammo": 45,
+      "tier": 3,
+      "requiredXp": 152600,
+      "chance": 0.8,
+      "description": "A five-person crew takes on the city’s most exclusive fictional vault.",
+      "image": "/images/team-crown-vault.png"
     }
   ],
   "daily": [
     {
       "id": "streets",
       "name": "Work the streets",
-      "task": "Attempt 5 crimes",
+      "kind": "crime",
+      "target": 5,
       "cash": 15000,
-      "xp": 200
-    },
-    {
-      "id": "clean",
-      "name": "A clean operation",
-      "task": "Succeed at 3 crimes",
-      "cash": 22500,
-      "xp": 240
+      "xp": 200,
+      "image": "/images/daily-streets.png",
+      "description": "Attempt five crimes. Successful and failed attempts count.",
+      "task": "Attempt five crimes. Successful and failed attempts count."
     },
     {
       "id": "shipment",
       "name": "Keep the goods moving",
-      "task": "Attempt 1 shipment",
+      "kind": "shipment",
+      "target": 1,
       "cash": 20000,
-      "xp": 300
-    },
-    {
-      "id": "supply",
-      "name": "Build a supply line",
-      "task": "Attempt 3 shipments (also completes the one-shipment objective)",
-      "cash": 35000,
-      "xp": 400
+      "xp": 300,
+      "image": "/images/daily-shipment.png",
+      "description": "Complete one shipment attempt, personally or for your family.",
+      "task": "Complete one shipment attempt, personally or for your family."
     },
     {
       "id": "respect",
       "name": "Make connections",
-      "task": "Give respect to 3 different players",
+      "kind": "respect",
+      "target": 3,
       "cash": 10000,
-      "xp": 100
+      "xp": 100,
+      "image": "/images/daily-respect.png",
+      "description": "Give respect to three different players.",
+      "task": "Give respect to three different players."
+    },
+    {
+      "id": "professional",
+      "name": "A clean operation",
+      "kind": "crime",
+      "successOnly": true,
+      "target": 3,
+      "cash": 22500,
+      "xp": 240,
+      "image": "/images/daily-professional.png",
+      "description": "Succeed at three crimes. Failed attempts do not count.",
+      "task": "Succeed at three crimes. Failed attempts do not count."
+    },
+    {
+      "id": "supply-line",
+      "name": "Build a supply line",
+      "kind": "shipment",
+      "target": 3,
+      "cash": 35000,
+      "xp": 400,
+      "image": "/images/daily-supply-line.png",
+      "description": "Attempt three shipments, personally or for your family. Also advances Keep the goods moving.",
+      "task": "Attempt three shipments, personally or for your family. Also advances Keep the goods moving."
     },
     {
       "id": "contact",
       "name": "Answer the call",
-      "task": "Attempt 1 contact mission",
+      "kind": "contact mission",
+      "target": 1,
       "cash": 30000,
-      "xp": 320
+      "xp": 320,
+      "image": "/images/daily-contact.png",
+      "description": "Accept and attempt one mysterious contact mission when an invitation arrives. Declining does not count.",
+      "task": "Accept and attempt one mysterious contact mission when an invitation arrives. Declining does not count."
     }
-  ]
+  ],
+  "gameVersion": "1.36.11",
+  "employees": [
+    {
+      "id": "runner",
+      "name": "Street Runner",
+      "price": 250000,
+      "income": 1000,
+      "power": 5000,
+      "limit": 10000,
+      "respectPerDay": 0,
+      "image": "/images/employee-runner.png"
+    },
+    {
+      "id": "driver",
+      "name": "Personal Chauffeur",
+      "price": 500000,
+      "income": 0,
+      "power": 0,
+      "limit": 1,
+      "respectPerDay": 2,
+      "image": "/images/employee-driver.png"
+    },
+    {
+      "id": "bookkeeper",
+      "name": "Bookkeeper",
+      "price": 1500000,
+      "income": 10000,
+      "power": 0,
+      "limit": 1,
+      "respectPerDay": 0,
+      "image": "/images/employee-bookkeeper.png"
+    },
+    {
+      "id": "broker",
+      "name": "Underworld Broker",
+      "price": 5000000,
+      "income": 25000,
+      "power": 0,
+      "limit": 1,
+      "respectPerDay": 0,
+      "image": "/images/employee-broker.png"
+    },
+    {
+      "id": "guard",
+      "name": "Elite Personal Bodyguard",
+      "price": 1250000,
+      "income": 0,
+      "power": 25000,
+      "limit": 6,
+      "respectPerDay": 0,
+      "image": "/images/employee-guard.png"
+    },
+    {
+      "id": "director",
+      "name": "Operations Leaders",
+      "price": 50000000,
+      "income": 150000,
+      "power": 1000000,
+      "limit": 6,
+      "respectPerDay": 0,
+      "image": "/images/employee-director.png"
+    }
+  ],
+  "investmentTerms": [
+    {
+      "hours": 6,
+      "min": 0.04,
+      "max": 0.06
+    },
+    {
+      "hours": 12,
+      "min": 0.08,
+      "max": 0.12
+    },
+    {
+      "hours": 24,
+      "min": 0.18,
+      "max": 0.25
+    },
+    {
+      "hours": 48,
+      "min": 0.38,
+      "max": 0.52
+    },
+    {
+      "hours": 72,
+      "min": 0.6,
+      "max": 0.8
+    }
+  ],
+  "ammoPrice": 2500
 }
