@@ -1,10 +1,10 @@
-# The Ledger — Mafia Companion
+# The Ledger - Mafia Companion
 
 A self-hosted guide and planning app for Mafia: The New Era. Eight interactive pages, no database, no login and no connection to the game. Settings and daily checks stay in the visitor's browser. There are no external fonts, analytics or third-party runtime scripts.
 
 ## Recommended: deploy like Apex League
 
-Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.1.0` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
+Use the ready-built `ghcr.io/sietsevdm/mafia-companion:1.2.0` image in a **separate Portainer stack**. No VPS checkout, file upload or build is required. Paste `portainer-stack.yaml`; the proxy network defaults to `proxy`, matching the F1 stack. NPM forwards to `http://mafia-companion:80`.
 
 See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the complete setup, GHCR access, DNS, SSL and update instructions. GitHub Actions verifies the app and Nginx container before publishing AMD64/ARM64 images and a versioned release.
 
@@ -16,7 +16,7 @@ See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the complete setup, GHCR access, DNS,
 - Player profile: normal XP, weapon tier, owned categories, bonuses and server cash setting.
 - Crime explorer: search, availability filter, sorting, expected XP per energy, ammunition and net cash.
 - Income lab: Runner projections, optional hourly manual-reinvestment scenario, reserve, chart and business comparison.
-- XP planner: rank milestones, target XP, expected attempts, ammunition and energy budget.
+- XP planner: eligible crimes ranked by modelled time to target, best XP per energy, sustained XP/hour, ammunition budget, plus daily and crew reward guidance. Estimates hold your profile constant and exclude custody, promotions and multi-crime rotations.
 - Team missions: per-player cost, success chance, XP efficiency and expected cash using crew Power.
 - Daily checklist: saved locally and reset by UTC date, with countdown.
 - Freight/production expected-profit and fixed-term investment calculators.
@@ -42,13 +42,13 @@ Do not point Portainer at files that only exist on your laptop. The mount paths 
 
 ### 2. Find your proxy network
 
-In Portainer, open **Containers → your Nginx Proxy Manager container → Networks**. Note the exact name of a user-defined Docker network already attached to it, such as `nginx-proxy_default`. Use the actual name, including any stack prefix.
+In Portainer, open **Containers  your Nginx Proxy Manager container  Networks**. Note the exact name of a user-defined Docker network already attached to it, such as `nginx-proxy_default`. Use the actual name, including any stack prefix.
 
 The companion and Nginx Proxy Manager must share this network. If NPM currently uses only Docker's built-in `bridge` network, create a user-defined bridge network in Portainer and attach NPM and this stack to it. Preserve NPM's existing networks and settings.
 
 ### 3. Create the stack
 
-1. Portainer → **Stacks → Add stack**.
+1. Portainer  **Stacks  Add stack**.
 2. Name: `mafia-companion`.
 3. Paste the contents of `portainer-static-stack.yaml` into the Web editor.
 4. Add an environment variable: `PROXY_NETWORK` = the exact network name from step 2.
@@ -121,7 +121,7 @@ The tests cover rank boundaries, crime expected values, car-theft rewards, unloc
 
 For the static-mount deployment, replace the files under `/opt/mafia-companion/web`, then refresh the browser. If changing `nginx.conf`, restart the container. No database migration is needed. Files are served with revalidation to avoid stale balance data.
 
-For the image deployment, rebuild using a new tag such as `mafia-companion:1.1.0`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
+For the image deployment, rebuild using a new tag such as `mafia-companion:1.2.0`, update the stack's image tag and redeploy. Keep the previous folder or image tag for rollback.
 
 ## Balance snapshot and assumptions
 
@@ -138,8 +138,8 @@ Pinned revision: `74b639548e8f0e851e7ccec8126458dc5ce93058`, checked 8 November 
 - Liquidation comparisons use minimum rounds, not extra-ammunition chance boosts.
 - Team estimates assume the selected player's rank/bonuses, full eligible crew and sufficient resources. They do not model recruitment time.
 - Runner forecasts use constant bonuses and manually repeated hourly hiring. They do not simulate calendar transitions, custody, expiry, cash caps or collection outages.
-- Employee accrual applies the effective paid/referral membership, Sunday and marriage factors once. Business rank scaling is logarithmic and capped at 1.15×. Forecasts hold these factors constant.
-- Business risk policies use long-run renewal averages: multiplier × (1 − risk × seizure) / (1 + risk × closure hours). Actual short-run results vary.
+- Employee accrual applies the effective paid/referral membership, Sunday and marriage factors once. Business rank scaling is logarithmic and capped at 1.15�. Forecasts hold these factors constant.
+- Business risk policies use long-run renewal averages: multiplier � (1 - risk � seizure) / (1 + risk � closure hours). Actual short-run results vary.
 - Investment calculations use the current rate bands and rank-dependent principal limit. New positions have no membership/Sunday bonus; custody reduction and existing positions are not simulated. No renewal is automatic.
 - XP planner freezes rank/chance and ignores promotion refills; its regeneration time is an energy-only scenario, not a forecast of real completion time.
 - All calculator assumptions describe fictional in-game money.
