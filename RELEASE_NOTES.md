@@ -1,12 +1,10 @@
-# Version 1.2.0
+# Version 1.2.1
 
-- Compare eligible crimes by modelled time to your XP target.
-- See best XP per energy, sustained XP/hour, attempts and ammunition budgets.
-- Include guidance for daily rewards and eligible team missions.
-- Account for energy regeneration during cooldowns and initial energy shortages.
+- Stop rebuilding forms while typing. Numeric changes recalculate after leaving the field or pressing Enter.
+- Preserve the next focused field during calculation updates.
+- Accept pasted comma-grouped numbers (1,234,567), decimal commas (12,5), and English/Dutch grouped decimals.
+- Keep empty and malformed drafts from being saved as zero.
 
-Uses the existing game 1.36.11 balance snapshot. Estimates hold the profile constant and exclude promotion refills, custody and optimized multi-crime rotations.
+Regression tests cover pasted numbers and input/commit behavior. Uses the existing game balance snapshot.
 
-Validation: all 33 Node tests pass, including four XP route tests. JavaScript syntax and whitespace checks pass. Browser layout has not been verified.
-
-In Portainer use ghcr.io/sietsevdm/mafia-companion:1.2.0 and update the stack with Re-pull image enabled.
+In Portainer use ghcr.io/sietsevdm/mafia-companion:1.2.1 and update with Re-pull image enabled.
