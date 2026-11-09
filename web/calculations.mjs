@@ -62,3 +62,18 @@ export function tradeQuote({ sale, cost, freight, risk, hours, travel, units = 1
   return { total, profit: sale - total, expectedProfit, hourly: hours > 0 ? expectedProfit / hours : 0, roi: total > 0 ? expectedProfit / total : 0 };
 }
 export const rankInvestmentLimit = level => Math.round(250000000 * 500 ** ((Math.max(1, Math.min(25, level)) - 1) / 24) / 1e6) * 1e6;
+
+// Compare fixed-crime scenarios, holding the current profile constant.
+export function xpRoutes(quotes, {gap, energy, interval}) {
+  return quotes.filter(q => q.available).map(q => {
+    const attempts = Math.ceil(Math.max(0, gap) / q.expectedXp);
+    const energyRequired = attempts * q.energy;
+    const energySeconds = Math.max(0, energyRequired - energy) * interval;
+    // The final attempt does not require waiting for its subsequent cooldown.
+    const firstEnergySeconds = attempts > 0 ? Math.max(0, q.energy - energy) * interval : 0;
+    const cooldownSeconds = firstEnergySeconds + Math.max(0, attempts - 1) * q.waitSeconds;
+    return {...q, attempts, energyRequired, ammoCost: attempts * q.supply,
+      seconds: Math.max(energySeconds, cooldownSeconds),
+      sustainedXpHour: q.expectedXp * 3600 / Math.max(q.waitSeconds, q.energy * interval)};
+  }).sort((a,b) => a.seconds - b.seconds || b.xpEnergy - a.xpEnergy);
+}
